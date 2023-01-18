@@ -1,0 +1,63 @@
+.container {
+  height: 140px;
+  display: flex;
+  position: sticky;
+  top:0;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1em;
+  background-color: rgb(28, 28, 28);
+  box-shadow: inset 0px -2px 0px #c5c6c7;
+}
+.leftContainer {
+  background-color: rgb(28, 28, 28);
+
+  display: flex;
+  align-items: center;
+  height: 140px;
+}
+.centerContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(28, 28, 28);
+}
+.artist {
+  font-size: 40px;
+  margin-bottom: 10px;
+  background-color: rgb(28, 28, 28);
+  box-shadow:inset 0px -1px 0px #f7ab0a;
+}
+.navContent {
+  display: flex;
+  width: 60vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 18px;
+  background-color: rgb(28, 28, 28);
+}
+.navLink {
+  transition-duration: 0.4s;
+  margin: 9px;
+  background-color: rgb(28, 28, 28);
+}
+.navLink:hover {
+  color: #f7ab0a;
+  scale: 1.1;
+}
+.rightContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgb(28, 28, 28);
+  height: 140px;
+  width: 168px;
+}
+.buttonHeader {
+  transition-duration: 0.4s;
+}
+.buttonHeader:hover {
+  scale: 1.1;
+}
