@@ -46,3 +46,12 @@
   width: 400px;
   margin-left: 20px;
 }
+.citationContainer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.citationImg {
+    max-width: 100%;
+    height: auto;
+}

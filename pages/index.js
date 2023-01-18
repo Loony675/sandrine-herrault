@@ -46,6 +46,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className={styles.citationContainer}>
+        <img  className={styles.citationImg}src='citationPic.webp' alt='outils de peintre'/>
+        <div></div>
+      </div>
     </div>
   );
 }
