@@ -43,6 +43,7 @@ export default function Home() {
               tableaux à mon atelier ou lors de mes expositions, de vous
               inscrire à mes cours.
             </p>
+            <p>test</p>
           </div>
         </div>
       </div>
