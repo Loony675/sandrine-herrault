@@ -32,7 +32,7 @@ export default function Home() {
               intériorité. C’est aussi un moyen pour moi de donner à voir ma
               beauté du monde.
             </p>
-            <br/>
+            <br />
             <p>
               Membre de la société Taylor, j'expose régulièrement dans
               différents salons de la région parisienne.{" "}
@@ -47,8 +47,16 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.citationContainer}>
-        <img  className={styles.citationImg}src='citationPic.webp' alt='outils de peintre'/>
-        <div></div>
+        <img
+          className={styles.citationImg}
+          src="citationPic.webp"
+          alt="outils de peintre"
+        />
+        <div className={styles.textImg}>
+          <div style={{background:'none'}}> "La créativité demande du courage."</div>
+          <br />
+          <div style={{background:'none'}}>Henri Matisse</div>
+        </div>
       </div>
     </div>
   );

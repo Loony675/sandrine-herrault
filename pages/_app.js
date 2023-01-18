@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Head from "next/head";
+import Footer from "@/components/Footer";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
@@ -13,11 +14,12 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Header />
       <Component {...pageProps} />
-      <footer>
+      <Footer/>
+      {/* <footer>
         <div>sandrine.herrault@laposte.net</div>
         <div>Port : 06 49 95 87 02</div>
         <div>Yvelines, France</div>
-      </footer>
+      </footer> */}
     </div>
   );
 }

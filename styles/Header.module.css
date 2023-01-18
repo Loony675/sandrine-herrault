@@ -8,6 +8,7 @@
   padding: 1em;
   background-color: rgb(28, 28, 28);
   box-shadow: inset 0px -2px 0px #c5c6c7;
+  z-index: 20;
 }
 .leftContainer {
   background-color: rgb(28, 28, 28);
