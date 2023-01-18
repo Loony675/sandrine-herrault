@@ -40,7 +40,7 @@
 .profilPic {
   width:30%;
   object-fit: cover;
-  border-radius: 3%;
+  border-radius: 5px;
 }
 .bioDescription {
   width: 400px;
@@ -54,4 +54,5 @@
 .citationImg {
     max-width: 100%;
     height: auto;
+    border-radius: 5px;
 }
