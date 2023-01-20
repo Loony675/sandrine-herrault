@@ -1,8 +1,9 @@
+import APropos from '@/components/APropos'
 import React from 'react'
 
 function aPropos() {
   return (
-    <div>aPropos</div>
+    <APropos/>
   )
 }
 

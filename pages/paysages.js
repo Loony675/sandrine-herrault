@@ -1,8 +1,10 @@
 import React from 'react'
+import Paysages from '@/components/Paysages'
+
 
 function paysages() {
   return (
-    <div>paysages</div>
+    <Paysages/>
   )
 }
 

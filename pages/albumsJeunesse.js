@@ -1,9 +1,9 @@
 import React from 'react'
-
+import AlbumsJeunesse from '../components/AlbumsJeunesse'
 function albumsJeunesse() {
   return (
-    <div>albumsJeunesse</div>
-  )
+   <AlbumsJeunesse/>)
+  
 }
 
 export default albumsJeunesse

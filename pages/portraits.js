@@ -1,8 +1,9 @@
+import Portraits from '@/components/Portraits'
 import React from 'react'
 
 function portraits() {
   return (
-    <div>portraits</div>
+   <Portraits/>
   )
 }
 

@@ -1,8 +1,9 @@
+import Expositions from '@/components/Expositions'
 import React from 'react'
 
 function expositions() {
   return (
-    <div>expositions</div>
+   <Expositions/>
   )
 }
 

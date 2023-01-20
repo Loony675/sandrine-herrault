@@ -1,8 +1,9 @@
+import Stages from '@/components/Stages'
 import React from 'react'
 
 function stages() {
   return (
-    <div>stages</div>
+   <Stages/>
   )
 }
 

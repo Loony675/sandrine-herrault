@@ -1,8 +1,9 @@
+import Ateliers from '@/components/Ateliers'
 import React from 'react'
 
 function ateliers() {
   return (
-    <div>ateliers</div>
+    <Ateliers/>
   )
 }
 
