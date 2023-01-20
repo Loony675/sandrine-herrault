@@ -13,7 +13,7 @@ export default function Home() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) =>
-    (window.location.href = `mailto:theo.loussot@gmail.com?subject=${data.subject}&body=Bonjour, je m'appelle ${data.name}. ${data.message} (${data.email})`);
+    (window.location.href = `mailto:theo.loussot@gmail.com?subject=${data.subject}&body=Bonjour,  ${data.name}. ${data.message} (${data.email})`);
   return (
     <div className={styles.homeContainer}>
       <div className={styles.bannerContainer}>
@@ -30,7 +30,7 @@ export default function Home() {
           <div className={styles.bioDescription}>
             <p>
               Je fais une peinture figurative qui prend naissance dans mon
-              atelier de Gambais, le plus souvent d'après nature ou en extérieur
+              atelier de Gambais, le plus souvent d&apos;après nature ou en extérieur
               sur le motif.
             </p>
             <br />
@@ -42,7 +42,7 @@ export default function Home() {
             </p>
             <br />
             <p>
-              Membre de la société Taylor, j'expose régulièrement dans
+              Membre de la société Taylor, j&apos;expose régulièrement dans
               différents salons de la région parisienne.{" "}
             </p>
             <br />
@@ -63,7 +63,7 @@ export default function Home() {
         <div className={styles.textImg}>
           <div style={{ background: "none" }}>
             {" "}
-            "La créativité demande du courage."
+            &#34;La créativité demande du courage.&#34;
           </div>
           <br />
           <div style={{ background: "none" }}>Henri Matisse</div>
