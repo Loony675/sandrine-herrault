@@ -1,5 +1,6 @@
 .homeContainer {
-  margin-top: 5px;
+    color:white;
+  margin-top: 10px;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -57,7 +58,7 @@
     width: 100%;
     height: 600px;
     border-radius: 5px;
-    opacity:0.75;
+    opacity:0.70;
 }
 .textImg {
     background: none;
@@ -68,4 +69,38 @@
     justify-content: center;
     align-items: center;
     font-size: 28px;
+}
+.contactSection{
+    height: 300px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    color:white;
+}
+.formTitle {
+    font-size: 30px;
+    width: 400px;
+}
+.formSectionG{
+    
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formSection1 {  
+    display:flex;
+}
+
+.contactInput {
+    color:white;
+    border: solid 3px #404040;
+    margin-bottom: 5px;
+    outline-width: none;
+}
+.contactInput:hover {
+    border: solid 3px #F7AB0A;
+}
+.contactInput:focus {
+    border: solid 3px #F7AB0A
 }

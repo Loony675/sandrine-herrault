@@ -1,11 +1,19 @@
 import Image from "next/image";
 import React from "react";
+import { useForm } from "react-hook-form";
 
-import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Header from "@/components/Header";
 
 export default function Home() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) =>
+    (window.location.href = `mailto:theo.loussot@gmail.com?subject=${data.subject}&body=Bonjour, je m'appelle ${data.name}. ${data.message} (${data.email})`);
   return (
     <div className={styles.homeContainer}>
       <div className={styles.bannerContainer}>
@@ -43,7 +51,6 @@ export default function Home() {
               tableaux à mon atelier ou lors de mes expositions, de vous
               inscrire à mes cours.
             </p>
-            <p>test</p>
           </div>
         </div>
       </div>
@@ -54,10 +61,48 @@ export default function Home() {
           alt="outils de peintre"
         />
         <div className={styles.textImg}>
-          <div style={{background:'none'}}> "La créativité demande du courage."</div>
+          <div style={{ background: "none" }}>
+            {" "}
+            "La créativité demande du courage."
+          </div>
           <br />
-          <div style={{background:'none'}}>Henri Matisse</div>
+          <div style={{ background: "none" }}>Henri Matisse</div>
         </div>
+      </div>
+      <div className={styles.contactSection}>
+        <div className={styles.formTitle}>Contactez-moi</div>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.formSectionG}>
+          <div className={styles.formSection1}>
+            <input
+              {...register("name")}
+              placeholder="Nom"
+              className={styles.contactInput} style={{marginRight:'5px'}}
+              type="text"
+            />
+            <input
+              {...register("email")}
+              placeholder="Email"
+              className={styles.contactInput} 
+              type="email"
+            />
+            </div>
+              <input
+                {...register("subject")}
+                placeholder="Objet"
+                className={styles.contactInput}
+                type="text"
+              />
+              <textarea
+                {...register("message")}
+                placeholder="Message"
+                className={styles.contactInput}
+                />
+              <button className={styles.contactInput} type="submit">
+                Envoyer
+              </button>
+            
+        </form>
+        
       </div>
     </div>
   );
