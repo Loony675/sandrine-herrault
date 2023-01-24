@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
 import { SocialIcon } from "react-social-icons";
@@ -45,13 +45,14 @@ function Header() {
       setIsMobile(false);
     }
   };
-
+  
   // create an event listener
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    // if (navBurger) {
-    //   document.getElementById('app-root').style.filter = 'blur(5px)'
-    // }
+
+    if (window.innerWidth <=768) {
+      setIsMobile(true)
+    }
     console.log('isMobile',isMobile);
   },[isMobile]);
   const clickHamburger = () => {
@@ -141,7 +142,7 @@ function Header() {
       <div className={styles.leftContainer}>{mapMedia}</div>
 
       <div className={styles.centerContainer}>
-        <div className={styles.artist}>Sandrine Bourgoin Herrault</div>
+        <div className={styles.artist}>Sandrine Bourgoin Herrault {isMobile ? 'true' : 'false'}</div>
         <div className={styles.skills}>Peintre Autrice Illustratrice</div>
         {isMobile ? (
           console.log("Mobile device detect")
