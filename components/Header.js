@@ -53,7 +53,7 @@ function Header() {
     //   document.getElementById('app-root').style.filter = 'blur(5px)'
     // }
     console.log('isMobile',isMobile);
-  });
+  },[isMobile]);
   const clickHamburger = () => {
     navBurger ? setNavBurger(false) : setNavBurger(true);
   };
