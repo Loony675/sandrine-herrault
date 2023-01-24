@@ -1,5 +1,5 @@
-import React from 'react'
-import Paysages from '@/components/Paysages'
+import Paysages from '@/components/Paysages';
+import React from 'react';
 
 
 function paysages() {
