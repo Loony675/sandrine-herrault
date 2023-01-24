@@ -25,14 +25,12 @@ const mapMedia = media.map((data, i) => {
       key={i}
       url={data.url}
       style={{
-        marginRight: "6px",
         backgroundColor: "transparent",
         height: 30,
         width: 30,
       }}
       className={styles.buttonHeader}
     />
-
   );
 });
 
@@ -41,7 +39,7 @@ function Header() {
   const [navBurger, setNavBurger] = useState(false);
   //choose the screen size
   const handleResize = () => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth <= 768) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
@@ -51,11 +49,10 @@ function Header() {
   // create an event listener
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    console.log("mobile", isMobile);
-    console.log("nav ouverte", navBurger);
     // if (navBurger) {
     //   document.getElementById('app-root').style.filter = 'blur(5px)'
     // }
+    console.log('isMobile',isMobile);
   });
   const clickHamburger = () => {
     navBurger ? setNavBurger(false) : setNavBurger(true);
@@ -176,12 +173,15 @@ function Header() {
       </div>
       {navBurger && (
         <div className={styles.navBarOpen}>
-
-            {navBarMobile}
-        
+          {navBarMobile}
           <button
             onClick={() => setNavBurger(false)}
-            style={{ border: "none", display: "flex", marginLeft: "20px", backgroundColor:'transparent' }}
+            style={{
+              border: "none",
+              display: "flex",
+              marginLeft: "20px",
+              backgroundColor: "transparent",
+            }}
           >
             <ImCross className={styles.logoHamburger} />
           </button>

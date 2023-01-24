@@ -92,7 +92,7 @@ export default function Home() {
               {...register("email")}
               placeholder="Email"
               className={styles.contactInput}
-              style={{ width: "100%" }}
+              style={{ }}
               type="email"
             />
           </div>

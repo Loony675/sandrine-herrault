@@ -109,13 +109,13 @@
   width: 400px;
 }
 .formSectionG {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
 }
 
 .formSection1 {
-  display: flex;
+  width: 100vw;
 }
 
 .contactInput {
@@ -150,4 +150,10 @@
   color: black;
   border-radius: 5px;
   border:none
+}
+@media (max-width:768px) {
+  .formTitle {
+    font-size: 20px;
+    width: 400px;
+  }
 }

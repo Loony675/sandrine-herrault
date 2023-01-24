@@ -25,6 +25,9 @@
   background-color: rgb(28, 28, 28);
 }
 .artist {
+  display:flex;
+  justify-content: center;
+  align-items: center;
   font-size: 40px;
   margin-bottom: 15px;
   background-color: rgb(28, 28, 28);
@@ -60,13 +63,14 @@
 }
 .buttonHeader {
   transition-duration: 0.4s;
+  margin-right: 6px;
 }
 .buttonHeader:hover {
   scale: 1.1;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .artist {
-    font-size: 30px;
+    font-size: 20px;
     margin-bottom: 15px;
     background-color: rgb(28, 28, 28);
     box-shadow: inset 0px -1px 0px #f7ab0a;
@@ -78,6 +82,9 @@
     display: flex;
     flex-direction: column;
     order: 3;
+  }.buttonHeader {
+    margin-right: 0;
+    margin-bottom: 3px;
   }
   .centerContainer {
     order: 2;
@@ -92,10 +99,8 @@
   .hamburgerMenu {
     display: flex;
     flex-direction: column;
-
     border: none;
   }
-
   .navBarOpen {
     position: fixed;
     top: O;
@@ -139,6 +144,5 @@
     transition-duration: 0.4s;
     margin: 14px;
     box-shadow: inset 0px -1px 0px #f7ab0a;
-
   }
 }
