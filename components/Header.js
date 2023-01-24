@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
 import { SocialIcon } from "react-social-icons";
-
+import { GiHamburgerMenu } from "react-icons/gi";
+import { ImCross } from "react-icons/im";
 const media = [
   {
     name: "Facebook",
@@ -23,58 +24,173 @@ const mapMedia = media.map((data, i) => {
     <SocialIcon
       key={i}
       url={data.url}
-      style={{ marginRight: "6px", backgroundColor: "rgb(28, 28, 28)" }}
+      style={{
+        marginRight: "6px",
+        backgroundColor: "rgb(28, 28, 28)",
+        height: 30,
+        width: 30,
+      }}
       className={styles.buttonHeader}
     />
   );
 });
+
 function Header() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [navBurger, setNavBurger] = useState(false);
+  //choose the screen size
+  const handleResize = () => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  // create an event listener
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    console.log("mobile", isMobile);
+    console.log("nav ouverte", navBurger);
+    // if (navBurger) {
+    //   document.getElementById('app-root').style.filter = 'blur(5px)'
+    // }
+  });
+  const clickHamburger = () => {
+    navBurger ? setNavBurger(false) : setNavBurger(true);
+  };
+  const navBar = (
+    <>
+      <Link href="/" className={styles.navLink}>
+        Accueil
+      </Link>
+      <Link href="/creations" className={styles.navLink}>
+        Créations
+      </Link>
+      <Link href="/expositions" className={styles.navLink}>
+        Expositions
+      </Link>
+      <Link href="/ateliers" className={styles.navLink}>
+        Ateliers
+      </Link>
+      <Link href="/stages" className={styles.navLink}>
+        Stages
+      </Link>
+      <Link href="/albumsJeunesse" className={styles.navLink}>
+        Albums Jeunesse
+      </Link>
+      <Link href="/about" className={styles.navLink}>
+        A propos
+      </Link>
+    </>
+  );
+  const navBarMobile = (
+    <>
+      <Link
+        href="/"
+        className={styles.navLink}
+        onClick={() => clickHamburger()}
+      >
+        Accueil
+      </Link>
+      <Link
+        href="/creations"
+        className={styles.navLink}
+        onClick={() => clickHamburger()}
+      >
+        Créations
+      </Link>
+      <Link
+        href="/expositions"
+        className={styles.navLink}
+        onClick={() => clickHamburger()}
+      >
+        Expositions
+      </Link>
+      <Link
+        href="/ateliers"
+        className={styles.navLink}
+        onClick={() => clickHamburger()}
+      >
+        Ateliers
+      </Link>
+      <Link
+        href="/stages"
+        className={styles.navLink}
+        onClick={() => clickHamburger()}
+      >
+        Stages
+      </Link>
+      <Link
+        href="/albumsJeunesse"
+        className={styles.navLink}
+        onClick={() => clickHamburger()}
+      >
+        Albums Jeunesse
+      </Link>
+      <Link
+        href="/about"
+        className={styles.navLink}
+        onClick={() => clickHamburger()}
+      >
+        A propos
+      </Link>
+    </>
+  );
+
   return (
     <div className={styles.container}>
       <div className={styles.leftContainer}>{mapMedia}</div>
 
       <div className={styles.centerContainer}>
         <div className={styles.artist}>Sandrine Bourgoin Herrault</div>
-        <div>Peintre Autrice Illustratrice</div>
-        <div className={styles.navContent}>
-          <Link href="/" className={styles.navLink}>
-            Accueil
-          </Link>
-          <Link href="/paysages" className={styles.navLink}>
-            Paysages
-          </Link>
-          <Link href="/portraits" className={styles.navLink}>
-            Portraits
-          </Link>
-          <Link href="/compositions" className={styles.navLink}>
-            Compositions
-          </Link>
-          <Link href="/expositions" className={styles.navLink}>
-            Expositions
-          </Link>
-          <Link href="/ateliers" className={styles.navLink}>
-            Ateliers
-          </Link>
-          <Link href="/stages" className={styles.navLink}>
-            Stages
-          </Link>
-          <Link href="/albumsJeunesse" className={styles.navLink}>
-            Albums Jeunesse
-          </Link>
-          <Link href="/about" className={styles.navLink}>
-            A propos
-          </Link>
-        </div>
+        <div className={styles.skills}>Peintre Autrice Illustratrice</div>
+        {isMobile ? (
+          console.log("Mobile device detect")
+        ) : (
+          <div className={styles.navContent}>{navBar}</div>
+        )}
       </div>
       <div className={styles.rightContainer}>
         <SocialIcon
           network="email"
           fgColor="#C5C6C7"
           url="/"
-          style={{ marginLeft: "6px" }}
+          style={{ height: "30px", width: "30px" }}
           className={styles.buttonHeader}
         />
+        {isMobile && (
+          <button
+            className={styles.hamburgerMenu}
+            type="button"
+            onClick={() => clickHamburger()}
+          >
+            {!navBurger ? (
+              <GiHamburgerMenu className={styles.logoHamburger} />
+            ) : (
+              <ImCross className={styles.logoHamburger} />
+            )}
+          </button>
+        )}
       </div>
+      {navBurger && (
+        <div className={styles.navBarOpen}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            {navBarMobile}
+          </div>
+          <button
+            onClick={() => setNavBurger(false)}
+            style={{ border: "none", display: "flex", marginLeft: "20px" }}
+          >
+            <ImCross className={styles.logoHamburger} />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

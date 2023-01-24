@@ -1,6 +1,5 @@
 .footerContainer {
   display: flex;
-  position: absolute;
   width: 100vw;
   flex-direction: column;
   bottom: 15px;
@@ -8,4 +7,5 @@
   justify-content: center;
   height: 100px;
   color:white;
+
 }
