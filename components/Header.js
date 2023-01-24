@@ -142,7 +142,7 @@ function Header() {
       <div className={styles.leftContainer}>{mapMedia}</div>
 
       <div className={styles.centerContainer}>
-        <div className={styles.artist}>Sandrine Bourgoin Herrault {isMobile ? 'true' : 'false'}</div>
+        <div className={styles.artist}>Sandrine Bourgoin Herrault </div>
         <div className={styles.skills}>Peintre Autrice Illustratrice</div>
         {isMobile ? (
           console.log("Mobile device detect")
