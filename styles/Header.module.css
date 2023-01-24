@@ -64,7 +64,7 @@
 .buttonHeader:hover {
   scale: 1.1;
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .artist {
     font-size: 30px;
     margin-bottom: 15px;
