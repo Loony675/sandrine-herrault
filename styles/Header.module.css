@@ -2,14 +2,14 @@
   height: 120px;
   display: flex;
   position: sticky;
-  top:0;
+  top: 0;
   align-items: center;
   justify-content: space-around;
   padding: 1em;
   background-color: rgb(28, 28, 28);
-  box-shadow:  0 20px 30px rgb(28, 28, 28);
+  box-shadow: 0 20px 30px rgb(28, 28, 28);
   z-index: 20;
-  color:white;
+  color: white;
 }
 .leftContainer {
   background-color: rgb(28, 28, 28);
@@ -28,7 +28,7 @@
   font-size: 40px;
   margin-bottom: 15px;
   background-color: rgb(28, 28, 28);
-  box-shadow:inset 0px -1px 0px #f7ab0a;
+  box-shadow: inset 0px -1px 0px #f7ab0a;
 }
 .navContent {
   display: flex;
@@ -40,7 +40,7 @@
   background-color: rgb(28, 28, 28);
 }
 .navLink {
-  color:white;
+  color: white;
   transition-duration: 0.4s;
   margin: 9px;
   background-color: rgb(28, 28, 28);
@@ -56,7 +56,7 @@
   background: rgb(28, 28, 28);
 }
 .hamburgerMenu {
-  display:none;
+  display: none;
 }
 .buttonHeader {
   transition-duration: 0.4s;
@@ -64,65 +64,81 @@
 .buttonHeader:hover {
   scale: 1.1;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   .artist {
     font-size: 30px;
     margin-bottom: 15px;
     background-color: rgb(28, 28, 28);
-    box-shadow:inset 0px -1px 0px #f7ab0a;
+    box-shadow: inset 0px -1px 0px #f7ab0a;
   }
   .skills {
-    display:none
+    display: none;
   }
   .leftContainer {
     display: flex;
     flex-direction: column;
-    order:3;
+    order: 3;
   }
   .centerContainer {
-    order:2;
+    order: 2;
   }
   .rightContainer {
-display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    order:1;
+    order: 1;
     width: 70px;
-
-
   }
   .hamburgerMenu {
-    display:flex;
+    display: flex;
     flex-direction: column;
 
-    border:none;
+    border: none;
   }
 
   .navBarOpen {
     position: fixed;
-    top:O;
+    top: O;
     right: 0;
     bottom: 0;
     left: 0;
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgba(0,0,0, 0.8);
-    z-index:99;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 99;
     color: white;
     font-size: 20px;
     text-transform: uppercase;
-;
   }
   .logoHamburger {
     font-size: 30px;
-    margin-top:5px;
+    margin-top: 5px;
     color: white;
     transition-duration: 0.3s;
+    background-color: transparent;
   }
   .logoHamburger:hover {
-    color:#f7ab0a
+    color: #f7ab0a;
+  }
+  .navContentMobile {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 18px;
+    background-color: rgb(28, 28, 28);
+    border-radius: 10px;
+  }
+  .navLinkMobile {
+    color:white;
+    transition-duration: 0.4s;
+    margin: 14px;
+    box-shadow: inset 0px -1px 0px #f7ab0a;
+
   }
 }

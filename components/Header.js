@@ -26,12 +26,13 @@ const mapMedia = media.map((data, i) => {
       url={data.url}
       style={{
         marginRight: "6px",
-        backgroundColor: "rgb(28, 28, 28)",
+        backgroundColor: "transparent",
         height: 30,
         width: 30,
       }}
       className={styles.buttonHeader}
     />
+
   );
 });
 
@@ -85,57 +86,57 @@ function Header() {
     </>
   );
   const navBarMobile = (
-    <>
+    <div className={styles.navContentMobile}>
       <Link
         href="/"
-        className={styles.navLink}
+        className={styles.navLinkMobile}
         onClick={() => clickHamburger()}
       >
         Accueil
       </Link>
       <Link
         href="/creations"
-        className={styles.navLink}
+        className={styles.navLinkMobile}
         onClick={() => clickHamburger()}
       >
         Créations
       </Link>
       <Link
         href="/expositions"
-        className={styles.navLink}
+        className={styles.navLinkMobile}
         onClick={() => clickHamburger()}
       >
         Expositions
       </Link>
       <Link
         href="/ateliers"
-        className={styles.navLink}
+        className={styles.navLinkMobile}
         onClick={() => clickHamburger()}
       >
         Ateliers
       </Link>
       <Link
         href="/stages"
-        className={styles.navLink}
+        className={styles.navLinkMobile}
         onClick={() => clickHamburger()}
       >
         Stages
       </Link>
       <Link
         href="/albumsJeunesse"
-        className={styles.navLink}
+        className={styles.navLinkMobile}
         onClick={() => clickHamburger()}
       >
         Albums Jeunesse
       </Link>
       <Link
         href="/about"
-        className={styles.navLink}
+        className={styles.navLinkMobile}
         onClick={() => clickHamburger()}
       >
         A propos
       </Link>
-    </>
+    </div>
   );
 
   return (
@@ -175,17 +176,12 @@ function Header() {
       </div>
       {navBurger && (
         <div className={styles.navBarOpen}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
+
             {navBarMobile}
-          </div>
+        
           <button
             onClick={() => setNavBurger(false)}
-            style={{ border: "none", display: "flex", marginLeft: "20px" }}
+            style={{ border: "none", display: "flex", marginLeft: "20px", backgroundColor:'transparent' }}
           >
             <ImCross className={styles.logoHamburger} />
           </button>
