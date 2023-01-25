@@ -2,7 +2,7 @@ import React from 'react'
 
 function Portraits() {
   return (
-    <div>Portraits</div>
+    <div>Page Portraits</div>
   )
 }
 

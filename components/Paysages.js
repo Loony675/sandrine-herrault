@@ -2,7 +2,7 @@ import React from 'react';
 
 function Paysages() {
   return (
-  <div>Paysages</div>
+  <div>Page Paysages</div>
   )
 }
 
