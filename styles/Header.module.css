@@ -68,6 +68,94 @@
 .buttonHeader:hover {
   scale: 1.1;
 }
+.contactMeHeader{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 99;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.contactSection {
+  position:relative;
+  top:0;
+  left:-60px;
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 18px;
+  background-color: rgb(28, 28, 28);
+  border-radius: 10px;
+}
+.formTitle {
+  font-size: 30px;
+  width: 400px;
+}
+.formSectionG {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.formSection1 {
+  width: 100vw;
+}
+
+.contactInput {
+  padding: 5px;
+  border: solid 3px #404040;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  outline-width: none;
+  transition-duration: 0.3s;
+  color: white;
+}
+.contactInput::placeholder {
+  color: gray;
+}
+.contactInput:hover {
+  border: solid 3px #f7ab0a;
+}
+.contactInput:focus {
+  border: solid 3px #f7ab0a;
+}
+.submitBtn {
+  height: 50px;
+  color:white;
+  border: solid 3px #404040;
+  border-radius: 5px;
+  font-weight: 600;
+  transition-duration: 0.3s;
+
+}
+.submitBtn:hover {
+  background-color: #f7ab0a;
+  color: black;
+  border-radius: 5px;
+  border:none
+}
+.logoCross {
+  position: relative;
+  top:-150px;
+  left:-10px;
+  font-size: 30px;
+  color: white;
+  margin-right: 15px;
+  transition-duration: 0.3s;
+  background-color: transparent;
+}
 @media screen and (max-width: 768px) {
   .artist {
     font-size: 20px;
@@ -103,7 +191,7 @@
   }
   .navBarOpen {
     position: fixed;
-    top: O;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useForm } from "react-hook-form";
 import Link from "next/link";
 import styles from "../styles/Header.module.css";
 import { SocialIcon } from "react-social-icons";
@@ -37,6 +38,7 @@ const mapMedia = media.map((data, i) => {
 function Header() {
   const [isMobile, setIsMobile] = useState(false);
   const [navBurger, setNavBurger] = useState(false);
+  const [contactMe, setContactMe] = useState(false);
   //choose the screen size
   const handleResize = () => {
     if (window.innerWidth <= 768) {
@@ -45,19 +47,30 @@ function Header() {
       setIsMobile(false);
     }
   };
-  
-  // create an event listener
+
   useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    }
     window.addEventListener("resize", handleResize);
 
-    if (window.innerWidth <=768) {
-      setIsMobile(true)
-    }
-    console.log('isMobile',isMobile);
-  },[isMobile]);
+    console.log("isMobile", isMobile);
+  }, [isMobile]);
   const clickHamburger = () => {
     navBurger ? setNavBurger(false) : setNavBurger(true);
   };
+  const clickContactHeader = () => {
+    contactMe ? setContactMe(false) : setContactMe(true);
+  };
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) =>
+    (window.location.href = `mailto:theo.loussot@gmail.com?subject=${data.subject}&body=Bonjour,  ${data.name}. ${data.message} (${data.email})`);
+
   const navBar = (
     <>
       <Link href="/" className={styles.navLink}>
@@ -154,10 +167,67 @@ function Header() {
         <SocialIcon
           network="email"
           fgColor="#C5C6C7"
-          url="/"
+          onClick={() => clickContactHeader()}
           style={{ height: "30px", width: "30px" }}
           className={styles.buttonHeader}
         />
+        {contactMe && (
+          <div className={styles.contactMeHeader}>
+            <button
+              onClick={() => setContactMe(false)}
+              style={{
+                border: "none",
+                display: "flex",
+                marginLeft: "20px",
+                backgroundColor: "transparent",
+              }}
+            >
+              <ImCross className={styles.logoCross} />
+            </button>
+            <div className={styles.contactSection}>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className={styles.formSectionG}
+                initial={{ x: 100, y: 0, opacity: 0 }}
+                whileInView={{ x: 0, y: 0, opacity: 1 }}
+                transition={{ duration: 1.5 }}
+                viewport={{ once: true }}
+              >
+                <div className={styles.formSection1}>
+                  <input
+                    {...register("name")}
+                    placeholder="Nom"
+                    className={styles.contactInput}
+                    style={{ marginRight: "5px" }}
+                    type="text"
+                  />
+                  <input
+                    {...register("email")}
+                    placeholder="Email"
+                    className={styles.contactInput}
+                    style={{}}
+                    type="email"
+                  />
+                </div>
+                <input
+                  {...register("subject")}
+                  placeholder="Objet"
+                  className={styles.contactInput}
+                  type="text"
+                />
+                <textarea
+                  {...register("message")}
+                  placeholder="Message"
+                  className={styles.contactInput}
+                  style={{ height: "100px" }}
+                />
+                <button className={styles.submitBtn} type="submit">
+                  Envoyer
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
         {isMobile && (
           <button
             className={styles.hamburgerMenu}
