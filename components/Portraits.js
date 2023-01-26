@@ -14,8 +14,9 @@ function Portraits() {
     fetch(URL)
       .then((res) => res.json())
       .then(({ result }) => {
-        const mapToiles = result.map((data) => {
+        const mapToiles = result.map((data,i) => {
           return {
+            key:i,
             titre: data.titre,
             description: data.description,
             photo: data.photo,
@@ -25,9 +26,9 @@ function Portraits() {
         setToilesRetrieved(mapToiles);
       });
   }, []);
-  const oeuvres = toilesRetrieved.map((data) => {
+  const oeuvres = toilesRetrieved.map((data,i) => {
     return (
-      <div>
+      <div key={i}>
         <div>Titre: {data.titre}</div>
         <div>Description {data.description}</div>
         <div>Photo: </div>
