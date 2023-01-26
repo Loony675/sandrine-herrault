@@ -5,8 +5,11 @@ import { urlFor } from "@/sanity";
 function Portraits() {
   const [toilesRetrieved, setToilesRetrieved] = useState([]);
   let DATASET = "production";
-  let QUERY = '*[_type == "oeuvres"]';
+    // fetch all
+  // let QUERY = '*[_type == "oeuvres"]';
+  let QUERY = '*[type == "portrait"]';
   let PROJECT_ID = "pyek8mhu";
+
   // let URL = `http://localhost:3000/api/*[_type == "oeuvres"]`;
   let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
   // console.log(URL);
@@ -14,6 +17,7 @@ function Portraits() {
     fetch(URL)
       .then((res) => res.json())
       .then(({ result }) => {
+        console.log(result);
         const mapToiles = result.map((data,i) => {
           return {
             key:i,
