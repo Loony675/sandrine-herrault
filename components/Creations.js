@@ -15,12 +15,13 @@ function Creations() {
   useEffect(() => {
     console.log("re-render");
   }, [componentVisible]);
+  
   return (
     <div className={styles.creationContainer}>
       <div className={styles.creationTitle}>Creations</div>
       <div className={styles.buttonNavComponentContainer}>
         <button className={styles.buttonNavComponent} onClick={(composant) => goToComponents(<Portraits />)}>
-          Portrait
+          Portraits
         </button>
         <button className={styles.buttonNavComponent} onClick={(composant) => goToComponents(<Paysages />)}>
           Paysages
