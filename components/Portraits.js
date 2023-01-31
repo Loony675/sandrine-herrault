@@ -4,11 +4,12 @@ import { urlFor } from "@/sanity";
 
 function Portraits() {
   const [toilesRetrieved, setToilesRetrieved] = useState([]);
-  let DATASET = "production";
-    // fetch all
-  // let QUERY = '*[_type == "oeuvres"]';
+
   let QUERY = '*[type == "portrait"]';
-  let PROJECT_ID = "pyek8mhu";
+
+  let DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET;
+
+  let PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 
   // let URL = `http://localhost:3000/api/*[_type == "oeuvres"]`;
   let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
