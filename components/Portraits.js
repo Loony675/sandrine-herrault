@@ -1,50 +1,63 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { urlFor } from "@/sanity";
+import styles from "../styles/Portraits.module.css";
 
 function Portraits() {
   const [toilesRetrieved, setToilesRetrieved] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+  const [hoverImg, setHoverImg] = useState(-1)
+
+  const handleResize = () => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    }
+    window.addEventListener("resize", handleResize);
+  }, [isMobile]);
 
   let QUERY = '*[type == "portrait"]';
-
   let DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET;
-
   let PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-
-  // let URL = `http://localhost:3000/api/*[_type == "oeuvres"]`;
   let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
-  // console.log(URL);
   useEffect(() => {
     fetch(URL)
       .then((res) => res.json())
       .then(({ result }) => {
-        console.log(result);
-        const mapToiles = result.map((data,i) => {
+        const mapToiles = result.map((data, i) => {
           return {
-            key:i,
+            key: i,
             titre: data.titre,
             description: data.description,
             photo: data.photo,
           };
         });
-        // console.log('mapToiles', mapToiles[0]);
         setToilesRetrieved(mapToiles);
       });
   }, []);
-  const oeuvres = toilesRetrieved.map((data,i) => {
+  const oeuvres = toilesRetrieved.map((data, i) => {
     return (
-      <div key={i}>
-        <div>Titre: {data.titre}</div>
-        <div>Description {data.description}</div>
-        <div>Photo: </div>
-        <img src={urlFor(data.photo).url()}/>
+      <div key={i} className={styles.oeuvresContainer}>
+        <img key={i} className={styles.oeuvreImg} src={urlFor(data.photo).url()} onMouseEnter={()=> setHoverImg(i)} onMouseLeave={()=> setHoverImg(-1)} />
+        {((!isMobile) && (hoverImg === i)) && (
+          <div className={styles.textOeuvre}>
+            <div style={{background:'none'}}>{data.titre}</div>
+            <div style={{background:'none'}}>{data.description}</div>
+          </div>
+        )}
       </div>
     );
   });
   return (
-    <div>
-      Page Portraits
-      <div>{oeuvres}</div>
+    <div className={styles.mainContainer}>
+      <div className={styles.mapOeuvresContainer}>{oeuvres}</div>
     </div>
   );
 }

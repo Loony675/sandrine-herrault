@@ -29,6 +29,13 @@
   font-size: 18px;
   border:none;
 }
+.buttonNavComponentActive {
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 18px;
+  border:none;
+  text-decoration: underline #f7ab0a;
+}
 .buttonNavComponent:hover{
     color:#f7ab0a;
     scale:1.1

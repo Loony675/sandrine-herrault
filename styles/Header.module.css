@@ -48,6 +48,12 @@
   margin: 9px;
   background-color: rgb(28, 28, 28);
 }
+.navLinkActive {
+  color:#f7ab0a;
+  transition-duration: 0.4s;
+  margin: 9px;
+  background-color: rgb(28, 28, 28);
+}
 .navLink:hover {
   color: #f7ab0a;
   scale: 1.1;

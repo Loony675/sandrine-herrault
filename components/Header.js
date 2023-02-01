@@ -39,6 +39,7 @@ function Header() {
   const [isMobile, setIsMobile] = useState(false);
   const [navBurger, setNavBurger] = useState(false);
   const [contactMe, setContactMe] = useState(false);
+  const [activeComponent, setActiveComponent] = useState("accueil");
   //choose the screen size
   const handleResize = () => {
     if (window.innerWidth <= 768) {
@@ -53,8 +54,6 @@ function Header() {
       setIsMobile(true);
     }
     window.addEventListener("resize", handleResize);
-
-    console.log("isMobile", isMobile);
   }, [isMobile]);
   const clickHamburger = () => {
     navBurger ? setNavBurger(false) : setNavBurger(true);
@@ -73,25 +72,71 @@ function Header() {
 
   const navBar = (
     <>
-      <Link href="/" className={styles.navLink}>
+      <Link
+        href="/"
+        className={
+          activeComponent === "accueil" ? styles.navLinkActive : styles.navLink
+        }
+        onClick={() => setActiveComponent("accueil")}
+      >
         Accueil
       </Link>
-      <Link href="/creations" className={styles.navLink}>
+      <Link
+        href="/creations"
+        className={
+          activeComponent === "créations"
+            ? styles.navLinkActive
+            : styles.navLink
+        }
+        onClick={() => setActiveComponent("créations")}
+      >
         Créations
       </Link>
-      <Link href="/expositions" className={styles.navLink}>
+      <Link
+        href="/expositions"
+        className={
+          activeComponent === "expositions"
+            ? styles.navLinkActive
+            : styles.navLink
+        }
+        onClick={() => setActiveComponent("expositions")}
+      >
         Expositions
       </Link>
-      <Link href="/ateliers" className={styles.navLink}>
+      <Link
+        href="/ateliers"
+        className={
+          activeComponent === "ateliers" ? styles.navLinkActive : styles.navLink
+        }
+        onClick={() => setActiveComponent("ateliers")}
+      >
         Ateliers
       </Link>
-      <Link href="/stages" className={styles.navLink}>
+      <Link
+        href="/stages"
+        className={
+          activeComponent === "stages" ? styles.navLinkActive : styles.navLink
+        }
+        onClick={() => setActiveComponent("stages")}
+      >
         Stages
       </Link>
-      <Link href="/albumsJeunesse" className={styles.navLink}>
+      <Link
+        href="/albumsJeunesse"
+        className={
+          activeComponent === "albumsJeunesse" ? styles.navLinkActive : styles.navLink
+        }
+        onClick={() => setActiveComponent("albumsJeunesse")}
+      >
         Albums Jeunesse
       </Link>
-      <Link href="/about" className={styles.navLink}>
+      <Link
+        href="/about"
+        className={
+          activeComponent === "about" ? styles.navLinkActive : styles.navLink
+        }
+        onClick={() => setActiveComponent("about")}
+      >
         A propos
       </Link>
     </>
@@ -157,11 +202,11 @@ function Header() {
       <div className={styles.centerContainer}>
         <div className={styles.artist}>Sandrine Bourgoin Herrault </div>
         <div className={styles.skills}>Peintre Autrice Illustratrice</div>
-        {isMobile ? (
-          console.log("Mobile device detect")
-        ) : (
+        {!isMobile &&
+          
+          
           <div className={styles.navContent}>{navBar}</div>
-        )}
+        }
       </div>
       <div className={styles.rightContainer}>
         <SocialIcon

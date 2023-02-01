@@ -5,28 +5,42 @@ import Paysages from "./Paysages";
 import Compositions from "./Compositions";
 
 function Creations() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [styleComposantVisible, setStyleComposantVisible] = useState('portraits')
   const [componentVisible, setComponentVisible] = useState(<Portraits />);
   const goToComponents = (composant) => {
-    console.log("value=", composant);
     setComponentVisible(composant);
-    console.log(componentVisible);
   };
-
+  const handleResize = () => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
   useEffect(() => {
-    console.log("re-render");
-  }, [componentVisible]);
+  }, [componentVisible, styleComposantVisible]);
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    }
+    window.addEventListener("resize", handleResize);
+
+  }, [isMobile]);
+
+
   
   return (
     <div className={styles.creationContainer}>
-      <div className={styles.creationTitle}>Creations</div>
+      {isMobile && <div className={styles.creationTitle}>Creations</div>}
       <div className={styles.buttonNavComponentContainer}>
-        <button className={styles.buttonNavComponent} onClick={(composant) => goToComponents(<Portraits />)}>
+        <button className={styleComposantVisible==='portraits' ? styles.buttonNavComponentActive : styles.buttonNavComponent} onClick={(composant) => {goToComponents(<Portraits />); setStyleComposantVisible('portraits')}}>
           Portraits
         </button>
-        <button className={styles.buttonNavComponent} onClick={(composant) => goToComponents(<Paysages />)}>
+        <button className={styleComposantVisible==='paysages' ? styles.buttonNavComponentActive : styles.buttonNavComponent} onClick={(composant) => {goToComponents(<Paysages />); setStyleComposantVisible('paysages')}}>
           Paysages
         </button>
-        <button className={styles.buttonNavComponent} onClick={(composant) => goToComponents(<Compositions />)}>
+        <button className={styleComposantVisible==='compositions' ? styles.buttonNavComponentActive : styles.buttonNavComponent} onClick={(composant) => {goToComponents(<Compositions />); setStyleComposantVisible('compositions')}}>
           Compositions
         </button>
       </div>
