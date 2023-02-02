@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { urlFor } from "@/sanity";
-import styles from '../styles/Paysages.module.css'
+import styles from "../styles/Paysages.module.css";
 
 // function Modal({ children, shown, close }) {
 //   return shown ? (
@@ -26,16 +26,28 @@ import styles from '../styles/Paysages.module.css'
 //   ) : null;
 // }
 
-function Portraits() {
+function Paysages() {
   const [toilesRetrieved, setToilesRetrieved] = useState([]);
-  // const [modalShown, toggleModal] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [hoverImg, setHoverImg] = useState(-1);
+
+  const handleResize = () => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    }
+    window.addEventListener("resize", handleResize);
+  }, [isMobile]);
   let DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET;
-  // fetch all
-  // let QUERY = '*[_type == "oeuvres"]';
   let QUERY = '*[type == "paysage"]';
   let PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-
-  // let URL = `http://localhost:3000/api/*[_type == "oeuvres"]`;
   let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
   // console.log(URL);
   useEffect(() => {
@@ -51,47 +63,33 @@ function Portraits() {
             photo: data.photo,
           };
         });
-        // console.log('mapToiles', mapToiles[0]);
         setToilesRetrieved(mapToiles);
       });
   }, []);
   const oeuvres = toilesRetrieved.map((data, i) => {
     return (
-      <div key={i}>
-        <div>Titre: {data.titre}</div>
-        <div>Description {data.description}</div>
-        <div>Photo: </div>
-        <img src={urlFor(data.photo).url()} />
+      <div key={i} className={styles.oeuvresContainer}>
+        <img
+          key={i}
+          className={styles.oeuvreImg}
+          src={urlFor(data.photo).url()}
+          onMouseEnter={() => setHoverImg(i)}
+          onMouseLeave={() => setHoverImg(-1)}
+        />
+        {!isMobile && hoverImg === i && (
+          <div className={styles.textOeuvre}>
+            <div style={{ background: "none" }}>{data.titre}</div>
+            <div style={{ background: "none" }}>{data.description}</div>
+          </div>
+        )}
       </div>
     );
   });
   return (
-    <div>
-      Page Paysages
-      <div>{oeuvres}</div>
-      {/* Modal test */}
-      {/* <div className="App">
-        <h1>Hello CodeSandbox</h1>
-        <h2>Start editing to see some magic happen!</h2>
-        <p>modalShown: {modalShown.toString()}</p>
-        <button
-          onClick={() => {
-            toggleModal(!modalShown);
-          }}
-        >
-          Toggle Modal
-        </button>
-        <Modal
-          shown={modalShown}
-          close={() => {
-            toggleModal(false);
-          }}
-        >
-          <h1>Look! I'm inside the modal!</h1>
-        </Modal>
-      </div> */}
+    <div className={styles.mainContainer}>
+      <div className={styles.mapOeuvresContainer}>{oeuvres}</div>
     </div>
   );
 }
 
-export default Portraits;
+export default Paysages;
