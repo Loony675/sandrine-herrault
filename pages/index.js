@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { useForm } from "react-hook-form";
 import styles from "@/styles/Home.module.css";
-import Header from "@/components/Header";
 import { MotionConfig, motion } from "framer-motion";
 
 export default function Home() {
@@ -84,7 +83,7 @@ export default function Home() {
               {...register("name")}
               placeholder="Nom"
               className={styles.contactInput}
-              style={{ marginRight: "5px" }}
+              style={{ marginRight: "5px", backgroundColor:('transparent') }}
               type="text"
             />
 
@@ -92,7 +91,6 @@ export default function Home() {
               {...register("email")}
               placeholder="Email"
               className={styles.contactInput}
-              style={{ }}
               type="email"
             />
           </div>

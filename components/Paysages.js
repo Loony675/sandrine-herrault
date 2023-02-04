@@ -76,7 +76,7 @@ function Paysages() {
           onMouseEnter={() => setHoverImg(i)}
           onMouseLeave={() => setHoverImg(-1)}
         />
-        {!isMobile && hoverImg === i && (
+        {hoverImg === i && (
           <div className={styles.textOeuvre}>
             <div style={{ background: "none" }}>{data.titre}</div>
             <div style={{ background: "none" }}>{data.description}</div>

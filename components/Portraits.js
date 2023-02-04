@@ -46,7 +46,7 @@ function Portraits() {
     return (
       <div key={i} className={styles.oeuvresContainer}>
         <img key={i} className={styles.oeuvreImg} src={urlFor(data.photo).url()} onMouseEnter={()=> setHoverImg(i)} onMouseLeave={()=> setHoverImg(-1)} />
-        {((!isMobile) && (hoverImg === i)) && (
+        {hoverImg === i && (
           <div className={styles.textOeuvre}>
             <div style={{background:'none'}}>{data.titre}</div>
             <div style={{background:'none'}}>{data.description}</div>

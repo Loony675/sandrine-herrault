@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 1em;
   background-color: rgb(28, 28, 28);
   box-shadow: 0 20px 30px rgb(28, 28, 28);
@@ -14,8 +14,10 @@
 .leftContainer {
   background-color: rgb(28, 28, 28);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   height: 100px;
+  width:100px;
 }
 .centerContainer {
   display: flex;
@@ -32,6 +34,11 @@
   margin-bottom: 15px;
   background-color: rgb(28, 28, 28);
   box-shadow: inset 0px -1px 0px #f7ab0a;
+}
+.skills {
+display:flex;
+justify-content: center;
+
 }
 .navContent {
   display: flex;
@@ -168,6 +175,7 @@
     margin-bottom: 15px;
     background-color: rgb(28, 28, 28);
     box-shadow: inset 0px -1px 0px #f7ab0a;
+    text-align: center;
   }
   .skills {
     display: none;
@@ -176,6 +184,7 @@
     display: flex;
     flex-direction: column;
     order: 3;
+    height: 70px;
   }.buttonHeader {
     margin-right: 0;
     margin-bottom: 3px;
@@ -188,12 +197,16 @@
     justify-content: space-between;
     align-items: center;
     order: 1;
-    width: 70px;
+    width: 75px;
+    border:solid red;
   }
   .hamburgerMenu {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: none;
+    background-color: transparent;
   }
   .navBarOpen {
     position: fixed;
@@ -214,7 +227,6 @@
   }
   .logoHamburger {
     font-size: 30px;
-    margin-top: 5px;
     color: white;
     transition-duration: 0.3s;
     background-color: transparent;

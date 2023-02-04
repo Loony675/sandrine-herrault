@@ -18,6 +18,7 @@ const media = [
     name: "Linkedin",
     url: "https://www.linkedin.com/in/sandrine-herrault-8576b966/?originalSubdomain=fr",
   },
+  { name: "Youtube", url: "https://www.youtube.com/@dladsh9408" },
 ];
 
 const mapMedia = media.map((data, i) => {
@@ -124,7 +125,9 @@ function Header() {
       <Link
         href="/albumsJeunesse"
         className={
-          activeComponent === "albumsJeunesse" ? styles.navLinkActive : styles.navLink
+          activeComponent === "albumsJeunesse"
+            ? styles.navLinkActive
+            : styles.navLink
         }
         onClick={() => setActiveComponent("albumsJeunesse")}
       >
@@ -202,11 +205,7 @@ function Header() {
       <div className={styles.centerContainer}>
         <div className={styles.artist}>Sandrine Bourgoin Herrault </div>
         <div className={styles.skills}>Peintre Autrice Illustratrice</div>
-        {!isMobile &&
-          
-          
-          <div className={styles.navContent}>{navBar}</div>
-        }
+        {!isMobile && <div className={styles.navContent}>{navBar}</div>}
       </div>
       <div className={styles.rightContainer}>
         <SocialIcon

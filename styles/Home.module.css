@@ -91,9 +91,7 @@
 }
 
 .formSection1 {
-  width: 100vw;
 }
-
 .contactInput {
   padding: 5px;
   border: solid 3px #404040;
@@ -102,6 +100,7 @@
   outline-width: none;
   transition-duration: 0.3s;
   color: white;
+  background-color: transparent;
 }
 .contactInput::placeholder {
   color: gray;
@@ -114,20 +113,20 @@
 }
 .submitBtn {
   height: 50px;
-  color:white;
+  color: white;
   border: solid 3px #404040;
   border-radius: 5px;
   font-weight: 600;
   transition-duration: 0.3s;
-
+  background-color: transparent;
 }
 .submitBtn:hover {
   background-color: #f7ab0a;
   color: black;
   border-radius: 5px;
-  border:none
+  border: none;
 }
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .formTitle {
     font-size: 20px;
     width: 400px;

@@ -1,0 +1,51 @@
+.mainContainer {
+  color: white;
+  margin-top: 10px;
+  padding: 1em;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.titleContainer {
+  font-size: 30px;
+  color: #f7ab0a;
+}
+.presentationContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: solid red;
+  width: 60%;
+}
+.inscriptionButtonContainer {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 100px;
+  border: solid gray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  color: rgb(28, 32, 37);
+  background-color: white;
+}
+.inscriptionButtonContainer:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: #f7ab0a;
+}
+.inscriptionButton {
+  color: rgb(28, 32, 37);
+  font-size: 20px;
+  width: 100vw;
+  background-color: white;
+}
+.inscriptionButton:hover {
+  color: #f7ab0a;
+}
