@@ -26,17 +26,17 @@ function Ateliers() {
       <div className={styles.presentationContainer}>
         <p>Apprenez avec moi</p>
         <p>
-          En plus de travailler sur mes propres projets, j’aime partager mes
+          En plus de travailler sur mes propres projets, j&apos;aime partager mes
           connaissances à travers les différents cours et ateliers que je
           propose chaque semaine.
           <p>
-            J’aime enseigner à mes élèves comment exprimer leur talent et
+            J&apos;aime enseigner à mes élèves comment exprimer leur talent et
             sensibilité artistique.
           </p>
           <p>
             Que vous soyez un enfant ou un adulte, artiste débutant ou confirmé,
-            venez participer à l'un de mes cours et découvrez mes secrets pour
-            créer de merveilleuses œuvres d'art !
+            venez participer à l&apos;un de mes cours et découvrez mes secrets pour
+            créer de merveilleuses œuvres d&apos;art !
           </p>
         </p>
       </div>
@@ -83,7 +83,7 @@ function Ateliers() {
                   />
                 </div>
                 <div>
-                  Choix d'atelier
+                  Choix d&apos;atelier
                   <select {...register('atelier')}>
                     <option value="Atelier enfant-ado">Atelier enfant-ado</option>
                     <option value="Atelier dessin et peinture adulte">
@@ -115,8 +115,8 @@ function Ateliers() {
         onClick={() => clickForm()}
       >
         <div className={styles.inscriptionButton}>
-          <AiOutlineMessage>M'inscrire AiOutlineMessage</AiOutlineMessage>
-          <div>M'inscrire</div>
+          <AiOutlineMessage>M&apos;inscrire AiOutlineMessage</AiOutlineMessage>
+          <div>M&apos;inscrire</div>
         </div>
       </div>
     </div>
