@@ -30,9 +30,11 @@
   border: none;
   margin-left: 5px;
   margin-right: 5px;
+  background-color: transparent;
 }
 .buttonNavComponentActive {
   color: white;
+  background-color: transparent;
   transition-duration: 0.3s;
   font-size: 18px;
   border: none;

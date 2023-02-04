@@ -54,6 +54,7 @@ justify-content: center;
   transition-duration: 0.4s;
   margin: 9px;
   background-color: rgb(28, 28, 28);
+  text-decoration: none;
 }
 .navLinkActive {
   color:#f7ab0a;
