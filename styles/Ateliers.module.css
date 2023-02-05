@@ -54,7 +54,7 @@
   justify-content: space-evenly;
   align-items: center;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 99;
   color: white;
   font-size: 20px;
@@ -63,26 +63,25 @@
 .formulaireContact {
   border: solid #f7ab0a;
   border-radius: 5px;
-  width: 75%;
+  width: 60%;
   background-color: rgb(28, 32, 37);
 }
 @media screen and (max-width: 768px) {
   .inscriptionButtonContainer {
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  border: solid gray;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  color: rgb(28, 32, 37);
-  background-color: white;
-  height: 30px;
-  width: 30px;
-
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    border: solid gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: rgb(28, 32, 37);
+    background-color: white;
+    height: 30px;
+    width: 30px;
   }
   .inscriptionText {
-    display:none;
+    display: none;
   }
 }
