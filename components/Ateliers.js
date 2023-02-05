@@ -116,7 +116,7 @@ function Ateliers() {
       >
         <div className={styles.inscriptionButton}>
           <AiOutlineMessage>M&apos;inscrire AiOutlineMessage</AiOutlineMessage>
-          <div>M&apos;inscrire</div>
+          <div className={styles.inscriptionText}>M&apos;inscrire</div>
         </div>
       </div>
     </div>

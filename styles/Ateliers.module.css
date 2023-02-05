@@ -66,3 +66,23 @@
   width: 75%;
   background-color: rgb(28, 32, 37);
 }
+@media screen and (max-width: 768px) {
+  .inscriptionButtonContainer {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  border: solid gray;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: rgb(28, 32, 37);
+  background-color: white;
+  height: 30px;
+  width: 30px;
+
+  }
+  .inscriptionText {
+    display:none;
+  }
+}
