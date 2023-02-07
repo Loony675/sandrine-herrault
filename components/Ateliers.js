@@ -4,6 +4,7 @@ import styles from "../styles/Ateliers.module.css";
 import { AiOutlineMessage } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
 import { urlFor } from "@/sanity";
+import { MotionConfig, motion } from "framer-motion";
 
 function Ateliers() {
   const [contactForm, setContactForm] = useState(false);
@@ -127,26 +128,61 @@ function Ateliers() {
       <div className={styles.talentContainer}>
         <div className={styles.titleContainer}>Mes élèves ont du talent !</div>
         <div>
-          <div className={styles.atelierContainer}>
+          <motion.div
+            onSubmit={handleSubmit(onSubmit)}
+            initial={{ x: 1000, y: 0, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, opacity: 1 }}
+            transition={{ duration: 4 }}
+            viewport={{ once: true }}
+            className={styles.atelierContainer}
+          >
             Ateliers créatifs pour les 4-6 ans
             {enfant46map}
-          </div>
-          <div className={styles.atelierContainer}>
+          </motion.div>
+          <motion.div
+            onSubmit={handleSubmit(onSubmit)}
+            initial={{ x: 1000, y: 0, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, opacity: 1 }}
+            transition={{ duration: 4.3 }}
+            viewport={{ once: true }}
+            className={styles.atelierContainer}
+          >
             Ateliers dessin à partir de 7 ans
-          {enfant7map}
-          </div>
-          <div className={styles.atelierContainer}>
+            {enfant7map}
+          </motion.div>
+          <motion.div
+            onSubmit={handleSubmit(onSubmit)}
+            initial={{ x: 1000, y: 0, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, opacity: 1 }}
+            transition={{ duration: 4.6 }}
+            viewport={{ once: true }}
+            className={styles.atelierContainer}
+          >
             Ateliers ado à partir de 11 ans
             {enfant11map}
-          </div>
-          <div className={styles.atelierContainer}>
+          </motion.div>
+          <motion.div
+            onSubmit={handleSubmit(onSubmit)}
+            initial={{ x: 1000, y: 0, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, opacity: 1 }}
+            transition={{ duration: 4.9 }}
+            viewport={{ once: true }}
+            className={styles.atelierContainer}
+          >
             Ateliers ado
             {enfantAdoMap}
-          </div>
-          <div className={styles.atelierContainer}>
+          </motion.div>
+          <motion.div
+            onSubmit={handleSubmit(onSubmit)}
+            initial={{ x: 1000, y: 0, opacity: 0 }}
+            whileInView={{ x: 0, y: 0, opacity: 1 }}
+            transition={{ duration: 5.2 }}
+            viewport={{ once: true }}
+            className={styles.atelierContainer}
+          >
             Ateliers ado avancé et adulte
             {adulteMap}
-          </div>
+          </motion.div>
         </div>
       </div>
       {contactForm && (
