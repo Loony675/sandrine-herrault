@@ -130,7 +130,7 @@ function Ateliers() {
         <div>
           <motion.div
             onSubmit={handleSubmit(onSubmit)}
-            initial={{ x: 200, y: 0, opacity: 0 }}
+            initial={{ x: 0, y: 0, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
             transition={{ duration: 4 }}
             viewport={{ once: true }}
@@ -141,7 +141,7 @@ function Ateliers() {
           </motion.div>
           <motion.div
             onSubmit={handleSubmit(onSubmit)}
-            initial={{ x: 200, y: 0, opacity: 0 }}
+            initial={{ x: 0, y: 0, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
             transition={{ duration: 4.3 }}
             viewport={{ once: true }}
@@ -152,7 +152,7 @@ function Ateliers() {
           </motion.div>
           <motion.div
             onSubmit={handleSubmit(onSubmit)}
-            initial={{ x: 200, y: 0, opacity: 0 }}
+            initial={{ x: 0, y: 0, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
             transition={{ duration: 4.6 }}
             viewport={{ once: true }}
@@ -163,7 +163,7 @@ function Ateliers() {
           </motion.div>
           <motion.div
             onSubmit={handleSubmit(onSubmit)}
-            initial={{ x: 200, y: 0, opacity: 0 }}
+            initial={{ x: 0, y: 0, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
             transition={{ duration: 4.9 }}
             viewport={{ once: true }}
@@ -174,7 +174,7 @@ function Ateliers() {
           </motion.div>
           <motion.div
             onSubmit={handleSubmit(onSubmit)}
-            initial={{ x: 200, y: 0, opacity: 0 }}
+            initial={{ x: 0, y: 0, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
             transition={{ duration: 5.2 }}
             viewport={{ once: true }}
