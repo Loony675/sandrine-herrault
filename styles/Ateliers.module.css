@@ -58,15 +58,60 @@
   z-index: 99;
   color: white;
   font-size: 20px;
-  text-transform: uppercase;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.closeForm{
+  transition-duration: 0.3s;
+  font-size: 28px;
+  z-index:99;
+}
+.closeForm:hover {
+  color:#f7ab0A;
+  cursor:pointer;
 }
 .formulaireContact {
+  height:auto;
   border: solid #f7ab0a;
   border-radius: 5px;
-  width: 60%;
+  width: auto;
   background-color: rgb(28, 32, 37);
+  padding:5px;
+
+}
+.descriptionContainer {
+  width: 400px;
+ color:#f7ab0A
+}
+.talentContainer {
+  width: 95vw;
+  padding-left:5px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.atelierContainer {
+display:flex;
+flex-direction: row;
+align-items: center;
+border: solid #f7ab0A;
+border-width: thin;
+border-radius: 2px;
+margin-bottom: 10px;
+padding:10px;
+text-decoration: underline #f7ab0A;
+}
+.atelierImg {
+  height:300px;
+  margin: 5px;
+  border-radius: 5px;
 }
 @media screen and (max-width: 768px) {
+  .atelierContainer{
+    display:flex;
+    flex-direction: column;
+  }
   .inscriptionButtonContainer {
     position: fixed;
     right: 10px;
@@ -83,5 +128,9 @@
   }
   .inscriptionText {
     display: none;
+  }
+  .contactFormOpen{
+    display:flex;
+    flex-direction: column;
   }
 }

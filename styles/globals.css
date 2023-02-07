@@ -8,13 +8,13 @@ body {
   font-family: "Roboto", sans-serif;
   height: 100%;
   position: relative;
-  scrollbar-color: #f7AB0A transparent;
+  scrollbar-color: #f7ab0a transparent;
 }
 body::-webkit-scrollbar {
   background: transparent;
 }
 body::-webkit-scrollbar-thumb {
-  background:#f7AB0A;
+  background: #f7ab0a;
 }
 footer {
   display: flex;

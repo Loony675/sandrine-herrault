@@ -3,13 +3,15 @@ import { useForm } from "react-hook-form";
 import styles from "../styles/Ateliers.module.css";
 import { AiOutlineMessage } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
+import { urlFor } from "@/sanity";
 
 function Ateliers() {
   const [contactForm, setContactForm] = useState(false);
-  const [atelierChoice, setAtelierChoice] = useState("test");
+  const [atelierChoice, setAtelierChoice] = useState("no-selection");
   const clickForm = () => {
     !contactForm ? setContactForm(true) : setContactForm(false);
   };
+  const [validChoice, setValidChoice] = useState(true);
   const {
     register,
     handleSubmit,
@@ -19,8 +21,87 @@ function Ateliers() {
   const onSubmit = (data) =>
     (window.location.href = `mailto:theo.loussot@gmail.com?subject=${data.subject}&body=Bonjour,  ${data.name}. ${data.message} (${data.email}) ${data.atelier})`);
 
-  useEffect(() => {}, [atelierChoice]);
-  console.log(atelierChoice);
+  useEffect(() => {
+    if (atelierChoice !== "no-selection") {
+      setValidChoice(false);
+    } else {
+      setValidChoice(true);
+    }
+  }, [atelierChoice, validChoice]);
+
+  const [ateliersRetrieved, setAteliersRetrieved] = useState([]);
+  let QUERY = '*[_type == "ateliers"]';
+  let DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET;
+  let PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+  let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+  useEffect(() => {
+    fetch(URL)
+      .then((res) => res.json())
+      .then(({ result }) => {
+        const mapAteliers = result.map((data, i) => {
+          return {
+            key: i,
+            titre: data.titre,
+            description: data.description,
+            photo: data.photo,
+            type: data.type,
+          };
+        });
+        setAteliersRetrieved(mapAteliers);
+      });
+  }, []);
+  const enfant46 = ateliersRetrieved.filter((data, i) => data.type == "4-6ans");
+  const enfant46map = enfant46.map((data, i) => {
+    return (
+      <img
+        key={i}
+        className={styles.atelierImg}
+        src={urlFor(data.photo).url()}
+      />
+    );
+  });
+  const enfant7 = ateliersRetrieved.filter((data, i) => data.type == "7ans");
+  const enfant7map = enfant7.map((data, i) => {
+    return (
+      <img
+        key={i}
+        className={styles.atelierImg}
+        src={urlFor(data.photo).url()}
+      />
+    );
+  });
+  const enfant11 = ateliersRetrieved.filter((data, i) => data.type == "11ans");
+  const enfant11map = enfant11.map((data, i) => {
+    return (
+      <img
+        key={i}
+        className={styles.atelierImg}
+        src={urlFor(data.photo).url()}
+      />
+    );
+  });
+  const enfantAdo = ateliersRetrieved.filter((data, i) => data.type == "ado");
+  const enfantAdoMap = enfantAdo.map((data, i) => {
+    return (
+      <img
+        key={i}
+        className={styles.atelierImg}
+        src={urlFor(data.photo).url()}
+      />
+    );
+  });
+  const adulte = ateliersRetrieved.filter(
+    (data, i) => data.type == "ado+adulte"
+  );
+  const adulteMap = adulte.map((data, i) => {
+    return (
+      <img
+        key={i}
+        className={styles.atelierImg}
+        src={urlFor(data.photo).url()}
+      />
+    );
+  });
   return (
     <div className={styles.mainContainer}>
       <div className={styles.titleContainer}>
@@ -43,12 +124,46 @@ function Ateliers() {
           </p>
         </p>
       </div>
+      <div className={styles.talentContainer}>
+        <div className={styles.titleContainer}>Mes élèves ont du talent !</div>
+        <div>
+          <div className={styles.atelierContainer}>
+            Ateliers créatifs pour les 4-6 ans
+            {enfant46map}
+          </div>
+          <div className={styles.atelierContainer}>
+            Ateliers dessin à partir de 7 ans
+          {enfant7map}
+          </div>
+          <div className={styles.atelierContainer}>
+            Ateliers ado à partir de 11 ans
+            {enfant11map}
+          </div>
+          <div className={styles.atelierContainer}>
+            Ateliers ado
+            {enfantAdoMap}
+          </div>
+          <div className={styles.atelierContainer}>
+            Ateliers ado avancé et adulte
+            {adulteMap}
+          </div>
+        </div>
+      </div>
       {contactForm && (
         <div className={styles.contactFormOpen}>
-          <ImCross onClick={() => clickForm()} />
+          <ImCross className={styles.closeForm} onClick={() => clickForm()} />
           <div className={styles.formulaireContact}>
-            <div>Formulaire inscription cours</div>
-            <div>Description</div>
+            <div>Formulaire d&apos;inscription aux cours</div>
+            <div
+              style={{
+                fontStyle: "italic",
+                fontWeight: "100",
+                fontSize: "12px",
+              }}
+            >
+              je vous prierai de bien vouloir remplir ce formulaire. Je
+              reviendrai ensuite vers vous.
+            </div>
             <div>
               <form
                 onSubmit={handleSubmit(onSubmit)}
@@ -60,20 +175,23 @@ function Ateliers() {
                     placeholder="Nom"
                     className={styles.contactInput}
                     type="text"
+                    required
                   />
                   <input
                     {...register("firstname")}
                     placeholder="Prénom"
                     className={styles.contactInput}
                     type="text"
+                    required
                   />
                 </div>
                 <div>
                   <input
                     {...register("birth")}
-                    placeholder="Birth"
+                    placeholder="Date de naissance"
                     className={styles.contactInput}
                     type="date"
+                    required
                   />
                 </div>
                 <div>
@@ -82,18 +200,21 @@ function Ateliers() {
                     placeholder="Adresse"
                     className={styles.contactInput}
                     type="text"
+                    required
                   />
                   <input
                     {...register("postalCode")}
                     placeholder="Code postal"
                     className={styles.contactInput}
                     type="text"
+                    required
                   />
                   <input
                     {...register("city")}
                     placeholder="Ville"
                     className={styles.contactInput}
                     type="text"
+                    required
                   />
                 </div>
                 <div>
@@ -103,6 +224,7 @@ function Ateliers() {
                     className={styles.contactInput}
                     type="tel"
                     pattern="[0]{1}[1-9]{1}[0-9]{2}[0-9]{2}[0-9]{2}[0-9]{2}"
+                    required
                   />
 
                   <input
@@ -110,6 +232,7 @@ function Ateliers() {
                     placeholder="Email"
                     className={styles.contactInput}
                     type="email"
+                    required
                   />
                 </div>
 
@@ -134,10 +257,14 @@ function Ateliers() {
                   {...register("message")}
                   placeholder="Message"
                   className={styles.contactInput}
-                  style={{ height: "100px" }}
+                  style={{ height: "70px", width: "300px" }}
                 />
                 <div>
-                  <button className={styles.submitBtn} type="submit">
+                  <button
+                    disabled={validChoice}
+                    className={styles.submitBtn}
+                    type="submit"
+                  >
                     Envoyer
                   </button>
                 </div>
@@ -145,10 +272,26 @@ function Ateliers() {
             </div>
           </div>
           {atelierChoice == "Atelier enfant-ado" && (
-            <div style={{ color: "white" }}>Enfant-Ado</div>
+            <div className={styles.descriptionContainer}>
+              Enfant-Ado{" "}
+              <div style={{ color: "white" }}>
+                Atelier créatif à partir de 4 ans
+                <br />
+                Dessin et peinture à partir de 7 ans
+                <br />
+                Atelier ado débutant ou confirmé
+              </div>
+            </div>
           )}
           {atelierChoice == "Atelier dessin et peinture adulte" && (
-            <div style={{ color: "white" }}>Adulte</div>
+            <div className={styles.descriptionContainer}>
+              Adulte
+              <div style={{ color: "white" }}>
+                Toutes techniques dont l'huile.
+                <br />
+                Tous niveaux
+              </div>
+            </div>
           )}
         </div>
       )}

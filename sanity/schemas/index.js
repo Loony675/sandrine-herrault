@@ -1,3 +1,4 @@
 import toiles from "./toiles"
+import ateliers from "./ateliers"
 
-export const schemaTypes = [toiles]
+export const schemaTypes = [toiles, ateliers]
