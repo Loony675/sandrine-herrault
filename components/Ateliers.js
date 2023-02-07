@@ -132,7 +132,7 @@ function Ateliers() {
             onSubmit={handleSubmit(onSubmit)}
             initial={{ x: 0, y: 0, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
-            transition={{ duration: 4 }}
+            transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
           >
@@ -143,7 +143,7 @@ function Ateliers() {
             onSubmit={handleSubmit(onSubmit)}
             initial={{ x: 0, y: 0, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
-            transition={{ duration: 4.3 }}
+            transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
           >
@@ -154,7 +154,7 @@ function Ateliers() {
             onSubmit={handleSubmit(onSubmit)}
             initial={{ x: 0, y: 0, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
-            transition={{ duration: 4.6 }}
+            transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
           >
@@ -165,7 +165,7 @@ function Ateliers() {
             onSubmit={handleSubmit(onSubmit)}
             initial={{ x: 0, y: 0, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
-            transition={{ duration: 4.9 }}
+            transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
           >
@@ -176,7 +176,7 @@ function Ateliers() {
             onSubmit={handleSubmit(onSubmit)}
             initial={{ x: 0, y: 0, opacity: 0 }}
             whileInView={{ x: 0, y: 0, opacity: 1 }}
-            transition={{ duration: 5.2 }}
+            transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
           >

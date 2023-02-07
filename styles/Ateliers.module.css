@@ -11,6 +11,7 @@
 .titleContainer {
   font-size: 30px;
   color: #f7ab0a;
+  text-align: center;
 }
 .presentationContainer {
   display: flex;
