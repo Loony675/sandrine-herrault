@@ -287,7 +287,7 @@ function Ateliers() {
             <div className={styles.descriptionContainer}>
               Adulte
               <div style={{ color: "white" }}>
-                Toutes techniques dont l'huile.
+                Toutes techniques dont l&apos;huile.
                 <br />
                 Tous niveaux
               </div>
