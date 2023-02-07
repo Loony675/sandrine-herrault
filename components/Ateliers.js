@@ -135,8 +135,8 @@ function Ateliers() {
             transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
-          >
-            Ateliers créatifs pour les 4-6 ans
+          > <div className={styles.titleAtelier}>
+            Ateliers créatifs pour les 4-6 ans</div>
             {enfant46map}
           </motion.div>
           <motion.div
@@ -146,8 +146,8 @@ function Ateliers() {
             transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
-          >
-            Ateliers dessin à partir de 7 ans
+          ><div className={styles.titleAtelier}>
+            Ateliers dessin à partir de 7 ans</div>
             {enfant7map}
           </motion.div>
           <motion.div
@@ -157,8 +157,8 @@ function Ateliers() {
             transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
-          >
-            Ateliers ado à partir de 11 ans
+          ><div className={styles.titleAtelier}>
+            Ateliers ado à partir de 11 ans</div>
             {enfant11map}
           </motion.div>
           <motion.div
@@ -169,7 +169,8 @@ function Ateliers() {
             viewport={{ once: true }}
             className={styles.atelierContainer}
           >
-            Ateliers ado
+            <div className={styles.titleAtelier}> Ateliers ado</div>
+
             {enfantAdoMap}
           </motion.div>
           <motion.div
@@ -179,8 +180,8 @@ function Ateliers() {
             transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
-          >
-            Ateliers ado avancé et adulte
+          ><div className={styles.titleAtelier}>
+            Ateliers ado avancé et adulte</div>
             {adulteMap}
           </motion.div>
         </div>

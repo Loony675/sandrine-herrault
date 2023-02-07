@@ -103,6 +103,9 @@ margin-bottom: 10px;
 padding:10px;
 text-decoration: underline #f7ab0A;
 }
+.titleAtelier{
+  width: 250px;
+}
 .atelierImg {
   height:300px;
   margin: 5px;
@@ -112,6 +115,8 @@ text-decoration: underline #f7ab0A;
   .atelierContainer{
     display:flex;
     flex-direction: column;
+    justify-content:center;
+    align-items: center;
   }
   .inscriptionButtonContainer {
     position: fixed;
