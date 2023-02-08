@@ -135,8 +135,13 @@ function Ateliers() {
             transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
-          > <div className={styles.titleAtelier}>
-            Ateliers créatifs pour les 4-6 ans</div>
+          >
+            {" "}
+            <div className={styles.titleAtelier}>
+              Ateliers créatifs pour les 4-6 ans
+              <br />
+              <button onClick={() => clickForm()}>M'inscrire</button>
+            </div>
             {enfant46map}
           </motion.div>
           <motion.div
@@ -146,8 +151,12 @@ function Ateliers() {
             transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
-          ><div className={styles.titleAtelier}>
-            Ateliers dessin à partir de 7 ans</div>
+          >
+            <div className={styles.titleAtelier}>
+              Ateliers dessin à partir de 7 ans
+              <br />
+              <button onClick={() => clickForm()}>M'inscrire</button>
+            </div>
             {enfant7map}
           </motion.div>
           <motion.div
@@ -157,8 +166,12 @@ function Ateliers() {
             transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
-          ><div className={styles.titleAtelier}>
-            Ateliers ado à partir de 11 ans</div>
+          >
+            <div className={styles.titleAtelier}>
+              Ateliers ado à partir de 11 ans
+              <br />
+              <button onClick={() => clickForm()}>M'inscrire</button>
+            </div>
             {enfant11map}
           </motion.div>
           <motion.div
@@ -169,7 +182,12 @@ function Ateliers() {
             viewport={{ once: true }}
             className={styles.atelierContainer}
           >
-            <div className={styles.titleAtelier}> Ateliers ado</div>
+            <div className={styles.titleAtelier}>
+              {" "}
+              Ateliers ado
+              <br />
+              <button onClick={() => clickForm()}>M'inscrire</button>
+            </div>
 
             {enfantAdoMap}
           </motion.div>
@@ -180,8 +198,12 @@ function Ateliers() {
             transition={{ duration: 3.7 }}
             viewport={{ once: true }}
             className={styles.atelierContainer}
-          ><div className={styles.titleAtelier}>
-            Ateliers ado avancé et adulte</div>
+          >
+            <div className={styles.titleAtelier}>
+              Ateliers ado avancé et adulte
+              <br />
+              <button onClick={() => clickForm()}>M'inscrire</button>
+            </div>
             {adulteMap}
           </motion.div>
         </div>
