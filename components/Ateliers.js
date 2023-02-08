@@ -140,7 +140,7 @@ function Ateliers() {
             <div className={styles.titleAtelier}>
               Ateliers créatifs pour les 4-6 ans
               <br />
-              <button onClick={() => clickForm()}>M'inscrire</button>
+              <button onClick={() => clickForm()}>M&apos;inscrire</button>
             </div>
             {enfant46map}
           </motion.div>
@@ -155,7 +155,7 @@ function Ateliers() {
             <div className={styles.titleAtelier}>
               Ateliers dessin à partir de 7 ans
               <br />
-              <button onClick={() => clickForm()}>M'inscrire</button>
+              <button onClick={() => clickForm()}>M&apos;inscrire</button>
             </div>
             {enfant7map}
           </motion.div>
@@ -170,7 +170,7 @@ function Ateliers() {
             <div className={styles.titleAtelier}>
               Ateliers ado à partir de 11 ans
               <br />
-              <button onClick={() => clickForm()}>M'inscrire</button>
+              <button onClick={() => clickForm()}>M&apos;inscrire</button>
             </div>
             {enfant11map}
           </motion.div>
@@ -186,7 +186,7 @@ function Ateliers() {
               {" "}
               Ateliers ado
               <br />
-              <button onClick={() => clickForm()}>M'inscrire</button>
+              <button onClick={() => clickForm()}>M&apos;inscrire</button>
             </div>
 
             {enfantAdoMap}
@@ -202,7 +202,7 @@ function Ateliers() {
             <div className={styles.titleAtelier}>
               Ateliers ado avancé et adulte
               <br />
-              <button onClick={() => clickForm()}>M'inscrire</button>
+              <button onClick={() => clickForm()}>M&apos;inscrire</button>
             </div>
             {adulteMap}
           </motion.div>

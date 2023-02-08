@@ -133,15 +133,7 @@ function Header() {
       >
         Albums Jeunesse
       </Link>
-      <Link
-        href="/about"
-        className={
-          activeComponent === "about" ? styles.navLinkActive : styles.navLink
-        }
-        onClick={() => setActiveComponent("about")}
-      >
-        A propos
-      </Link>
+
     </>
   );
   const navBarMobile = (
@@ -188,13 +180,7 @@ function Header() {
       >
         Albums Jeunesse
       </Link>
-      <Link
-        href="/about"
-        className={styles.navLinkMobile}
-        onClick={() => clickHamburger()}
-      >
-        A propos
-      </Link>
+
     </div>
   );
 
