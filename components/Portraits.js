@@ -6,7 +6,7 @@ import styles from "../styles/Portraits.module.css";
 function Portraits() {
   const [toilesRetrieved, setToilesRetrieved] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
-  const [hoverImg, setHoverImg] = useState(-1)
+  const [hoverImg, setHoverImg] = useState(-1);
 
   const handleResize = () => {
     if (window.innerWidth <= 768) {
@@ -45,11 +45,17 @@ function Portraits() {
   const oeuvres = toilesRetrieved.map((data, i) => {
     return (
       <div key={i} className={styles.oeuvresContainer}>
-        <img key={i} className={styles.oeuvreImg} src={urlFor(data.photo).url()} onMouseEnter={()=> setHoverImg(i)} onMouseLeave={()=> setHoverImg(-1)} />
+        <img
+          key={i}
+          className={styles.oeuvreImg}
+          src={urlFor(data.photo).url()}
+          onMouseEnter={() => setHoverImg(i)}
+          onMouseLeave={() => setHoverImg(-1)}
+        />
         {hoverImg === i && (
           <div className={styles.textOeuvre}>
-            <div style={{background:'none'}}>{data.titre}</div>
-            <div style={{background:'none'}}>{data.description}</div>
+            <div style={{ background: "none" }}>{data.titre}</div>
+            <div style={{ background: "none" }}>{data.description}</div>
           </div>
         )}
       </div>
