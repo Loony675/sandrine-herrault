@@ -17,7 +17,7 @@
   flex-wrap: wrap;
   align-items: center;
   height: 100px;
-  width:100px;
+  width:80px;
 }
 .centerContainer {
   display: flex;
@@ -42,7 +42,6 @@ justify-content: center;
 }
 .navContent {
   display: flex;
-  width: 60vw;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
@@ -68,9 +67,10 @@ justify-content: center;
 }
 .rightContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   background: rgb(28, 28, 28);
+  width:80px;
 }
 .hamburgerMenu {
   display: none;

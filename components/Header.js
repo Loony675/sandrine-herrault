@@ -93,17 +93,7 @@ function Header() {
       >
         Créations
       </Link>
-      <Link
-        href="/expositions"
-        className={
-          activeComponent === "expositions"
-            ? styles.navLinkActive
-            : styles.navLink
-        }
-        onClick={() => setActiveComponent("expositions")}
-      >
-        Expositions
-      </Link>
+
       <Link
         href="/ateliers"
         className={
@@ -114,13 +104,13 @@ function Header() {
         Ateliers
       </Link>
       <Link
-        href="/stages"
+        href="/events"
         className={
-          activeComponent === "stages" ? styles.navLinkActive : styles.navLink
+          activeComponent === "events" ? styles.navLinkActive : styles.navLink
         }
-        onClick={() => setActiveComponent("stages")}
+        onClick={() => setActiveComponent("events")}
       >
-        Stages
+        Evènements
       </Link>
       <Link
         href="/albumsJeunesse"
@@ -133,7 +123,6 @@ function Header() {
       >
         Albums Jeunesse
       </Link>
-
     </>
   );
   const navBarMobile = (
@@ -152,13 +141,7 @@ function Header() {
       >
         Créations
       </Link>
-      <Link
-        href="/expositions"
-        className={styles.navLinkMobile}
-        onClick={() => clickHamburger()}
-      >
-        Expositions
-      </Link>
+
       <Link
         href="/ateliers"
         className={styles.navLinkMobile}
@@ -167,11 +150,11 @@ function Header() {
         Ateliers
       </Link>
       <Link
-        href="/stages"
+        href="/events"
         className={styles.navLinkMobile}
         onClick={() => clickHamburger()}
       >
-        Stages
+        Evènements
       </Link>
       <Link
         href="/albumsJeunesse"
@@ -180,7 +163,6 @@ function Header() {
       >
         Albums Jeunesse
       </Link>
-
     </div>
   );
 
