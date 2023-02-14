@@ -81,7 +81,7 @@ function Stages() {
         </div>
         <div className={styles.descriptionService}>
           Ce que je propose à vos enfants: se créer une vie tellement plus riche
-          grâce à l'art !
+          grâce à l&apos;art !
         </div>
         <div className={styles.stagesContainer}>{stages}</div>
       </div>
