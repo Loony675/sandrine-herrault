@@ -104,12 +104,21 @@ padding:10px;
 text-decoration: underline #f7ab0A;
 }
 .titleAtelier{
-  width: 250px;
+  width: auto;
+  display:flex;
+  flex-direction: column;
 }
 .atelierImg {
-  height:300px;
+  height:250px;
   margin: 5px;
   border-radius: 5px;
+}
+
+@media screen and (max-width:1024px) {
+  .atelierImg{
+    height: 200px;
+  }
+  
 }
 @media screen and (max-width: 768px) {
   .atelierContainer{
@@ -139,5 +148,8 @@ text-decoration: underline #f7ab0A;
   .contactFormOpen{
     display:flex;
     flex-direction: column;
+  }
+  .atelierImg {
+    height: 150px;
   }
 }

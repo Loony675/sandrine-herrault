@@ -138,9 +138,10 @@ function Ateliers() {
           >
             {" "}
             <div className={styles.titleAtelier}>
-              Ateliers créatifs pour les 4-6 ans
-              <br />
-              <button onClick={() => clickForm()}>M&apos;inscrire</button>
+              <div> Ateliers créatifs pour les 4-6 ans</div>
+              <div>
+                <button onClick={() => clickForm()}>M&apos;inscrire</button>
+              </div>
             </div>
             {enfant46map}
           </motion.div>
