@@ -47,8 +47,9 @@
   border-radius: 5px;
 }
 .bioDescription {
-  width: 400px;
+  width: 300px;
   margin-left: 50px;
+  font-size: 14px;
 }
 .citationContainer {
   display: flex;
