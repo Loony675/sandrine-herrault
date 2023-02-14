@@ -85,7 +85,7 @@ function Stages() {
         </div>
         <div className={styles.stagesContainer}>{stages}</div>
       </div>
-    <button className={styles.inscriptionButton} onClick={() => clickForm()}>M'inscrire à un stage</button>
+    <button className={styles.inscriptionButton} onClick={() => clickForm()}>M&apos;inscrire à un stage</button>
     {contactForm && (
         <div className={styles.contactFormOpen}>
           <ImCross className={styles.closeForm} onClick={() => clickForm()} />
