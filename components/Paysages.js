@@ -26,12 +26,10 @@ function Paysages() {
   let QUERY = '*[type == "paysage"]';
   let PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
   let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
-  // console.log(URL);
   useEffect(() => {
     fetch(URL)
       .then((res) => res.json())
       .then(({ result }) => {
-        console.log(result);
         const mapToiles = result.map((data, i) => {
           return {
             key: i,

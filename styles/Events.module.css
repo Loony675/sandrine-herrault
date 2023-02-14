@@ -1,0 +1,50 @@
+.creationContainer {
+    color: white;
+    margin-top: 10px;
+    padding: 1em;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .creationTitle {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-decoration: underline #f7ab0a;
+  }
+  .buttonNavComponentContainer {
+    width: 40%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  .buttonNavComponent {
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 18px;
+    border: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: transparent;
+  }
+  .buttonNavComponentActive {
+    color: white;
+    background-color: transparent;
+    transition-duration: 0.3s;
+    font-size: 18px;
+    border: none;
+    text-decoration: underline #f7ab0a;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .buttonNavComponent:hover {
+    color: #f7ab0a;
+    scale: 1.1;
+    cursor:pointer;
+  }
+  

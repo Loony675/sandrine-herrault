@@ -1,10 +1,10 @@
-import Expositions from '@/components/Expositions'
+import Events from '@/components/Events'
 import React from 'react'
 
-function expositions() {
+function events() {
   return (
-   <Expositions/>
+   <Events/>
   )
 }
 
-export default expositions
+export default events
