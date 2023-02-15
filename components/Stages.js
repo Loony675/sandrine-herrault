@@ -4,7 +4,7 @@ import { urlFor } from "@/sanity";
 import { useForm } from "react-hook-form";
 import { AiOutlineMessage } from "react-icons/ai";
 import { ImCross } from "react-icons/im";
-
+import Carroussel from "./Carroussel";
 
 function Stages() {
   const [stagesRetrieved, setStagesRetrieved] = useState([]);
@@ -16,9 +16,7 @@ function Stages() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) =>
-  (window.location.href = `mailto:theo.loussot@gmail.com?subject=${data.subject}&body=Bonjour,  ${data.name}. ${data.message} (${data.email}) ${data.atelier})`);
-
-
+    (window.location.href = `mailto:theo.loussot@gmail.com?subject=${data.subject}&body=Bonjour,  ${data.name}. ${data.message} (${data.email}) ${data.atelier})`);
 
   const clickForm = () => {
     !contactForm ? setContactForm(true) : setContactForm(false);
@@ -34,7 +32,6 @@ function Stages() {
       .then((res) => res.json())
       .then(({ result }) => {
         const mapStages = result.map((data, i) => {
-          console.log(data);
           return {
             key: i,
             titre: data.titre,
@@ -53,22 +50,20 @@ function Stages() {
       <div key={i} className={styles.stageContainer}>
         <div
           style={{
-            display: "flex",
-            flexDirection: "row",
-            fontWeight: 400,
+            fontWeight: 600,
           }}
         >
-          Thème:<div style={{ fontWeight: 200 }}>{data.description}</div>
+          Thème:<div style={{ fontWeight: 400 }}>{data.description}</div>
         </div>
         <img src={urlFor(data.photo).url()} />
         <div
           style={{
             display: "flex",
             flexDirection: "row",
-            fontWeight: 400,
+            fontWeight: 600,
           }}
         >
-          Lieu:<div style={{ fontWeight: 200 }}>{data.lieu}</div>
+          Lieu:<div style={{ fontWeight: 400 }}>{data.lieu}</div>
         </div>
       </div>
     );
@@ -85,12 +80,14 @@ function Stages() {
         </div>
         <div className={styles.stagesContainer}>{stages}</div>
       </div>
-    <button className={styles.inscriptionButton} onClick={() => clickForm()}>M&apos;inscrire à un stage</button>
-    {contactForm && (
-        <div className={styles.contactFormOpen}>
+      <button className={styles.inscriptionButton} onClick={() => clickForm()}>
+        M&apos;inscrire à un stage
+      </button>
+      {contactForm && (
+        <div className={styles.formOpen}>
           <ImCross className={styles.closeForm} onClick={() => clickForm()} />
           <div className={styles.formulaireContact}>
-            <div>Formulaire d&apos;inscription aux cours</div>
+            <div>Formulaire d&apos;inscription aux stages</div>
             <div
               style={{
                 fontStyle: "italic",
@@ -173,17 +170,40 @@ function Stages() {
                   />
                 </div>
 
-                <textarea
-                  {...register("message")}
-                  placeholder="Message"
-                  className={styles.contactInput}
-                  style={{ height: "70px", width: "300px" }}
-                />
                 <div>
-                  <button
-                    className={styles.submitBtn}
-                    type="submit"
-                  >
+                  Tarifs des ateliers:
+                  <div>
+                    Atelier créatif 50€ la semaine soit 10€ l’atelier
+                    <div>
+                      Déjà élève avec Sandrine cette année :
+                      <div>
+                        <p>
+                          Atelier arts plastiques 65€ la semaine soit13€
+                          l’atelier
+                        </p>
+                        <p>
+                          Atelier Illustration BD 100€ la semaine soit 20€
+                          l’atelier
+                        </p>
+                      </div>
+                    </div>
+                    <div>
+                      Pour les extérieurs :
+                      <div>
+                        <p>
+                          Atelier arts plastiques 75€ la semaine soit 15€
+                          l’atelier
+                        </p>
+                        <p>
+                          Atelier Illustration BD 120€ la semaine soit 24€
+                          l’atelier
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button className={styles.submitBtn} type="submit">
                     Envoyer
                   </button>
                 </div>
@@ -196,9 +216,11 @@ function Stages() {
       <div
         className={styles.inscriptionButtonContainer}
         onClick={() => clickForm()}
-      >
+      ></div>
+      <div className={styles.pastStages}>
+        <div className={styles.titleEventsPast}>Anciens projets</div>
+        <Carroussel />
       </div>
-      <div className={styles.pastStages}>stages passés</div>
     </div>
   );
 }
