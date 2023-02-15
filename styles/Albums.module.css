@@ -1,0 +1,31 @@
+.mainContainer {
+    color: white;
+    margin-top: 10px;
+    padding: 1em;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .descriptionLivre {
+    margin:15px;
+    display:flex;
+    flex-direction: column;
+    max-width: 500px;
+  }
+  .buttonLink {
+    background-color: white;
+    text-transform: uppercase;
+    margin: 15px;
+    width: 100px;
+    height: 40px;
+    border-radius: 99px;
+    border:none
+  }
+  .buttonLink:hover {
+    background-color: rgb(28,32,37);
+    cursor:pointer;
+    color:#F7AB0A;
+    border:#F7AB0A solid;
+  }
